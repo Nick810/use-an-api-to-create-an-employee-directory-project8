@@ -1,0 +1,48 @@
+// ======================================
+//  Form
+// ======================================
+
+.search {
+  &-form {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    @include media-q(medium) {
+      text-align: right;
+      margin-top: em(35);
+      width: 100%;
+    }
+    @include media-q(large) {
+      max-width: em(400);
+      margin: auto;
+      margin-top: em(64);
+    }
+  }
+  &-bar {
+    width: 80%;
+    background-color: #e8eaeb;
+    border: em(2) solid #A0A0A0;
+    border-radius: em(5);
+    padding: em(10) 0;
+    text-indent: 5%;
+    transition: 0.4s ease-out;
+    @include media-q(medium) {
+      margin-right: em(60);
+      width: 40%;
+    }
+    @include media-q(large) {
+      width: 75%;
+      margin-right: em(60);
+      margin-top: em(30);
+    }
+    &:focus {
+      background-color: $white;
+      color: $secondary-heading-color;
+      outline: none;
+      box-shadow: 0 0 em(10) rgba(255,127, 80, 1);
+    }
+    &::placeholder {
+      text-indent: 5%;
+    }
+  }
+}

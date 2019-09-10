@@ -1,0 +1,141 @@
+// ======================================
+//  Container
+// ======================================
+
+.grid-container {
+  display: grid;
+  max-width: $max-width;
+  margin: 0 auto;
+  position: relative;
+  grid-template-columns: 100%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "heading"
+    "main";
+}
+
+.heading {
+  grid-area: heading;
+  display: flex;
+  flex-direction: column;
+  color: 	$heading-color;
+  @include media-q(large) {
+    flex-direction: row;
+    padding-top: em(15);
+  }
+  &-text {
+    font-weight: 600;
+    font-size: em(24);
+    margin: em(20) 10% em(20) 10%;
+    flex: 1;
+    @include media-q(medium) {
+      margin: em(30) em(10) em(0) em(25);
+    }
+  }
+}
+
+#main {
+  grid-area: main;
+  display: grid;
+  padding: em(20) 0;
+  @include media-q(medium) {
+    grid-template-columns: 1fr 1fr;
+    margin: em(40) em(20);
+    padding: 0;
+  }
+  @include media-q(large) {
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: em(25);
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  border: em(2) solid $card-frame-color;
+  border-radius: em(5);
+  padding: em(20);
+  margin: em(20) 10%;
+  overflow: auto;
+  transition: opacity 0.5s ease-out;
+  cursor: pointer;
+  @include media-q(large) {
+    flex-direction: row;
+  }
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.profile {
+  &-card {
+    margin: auto;
+    @include media-q(large) {
+      margin: auto 0;
+      margin-top: 0;
+    }
+  }
+  &-text {
+    margin: auto;
+    text-align: center;
+    color: $text-color;
+    @include media-q(large) {
+      padding-left: em(20);
+      text-align: left;
+    }
+    & p {
+      font-size: em(14);
+      &:nth-of-type(2) {
+        @include media-q(large) {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.modal {
+  &-overlay {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s linear;
+    background: rgba(0,0,0,0);
+  }
+  &-card {
+    text-align: center;
+    box-shadow: 0 0 em(16) em(4) rgba(0,0,0,0.55);
+    color: $text-color-modal;
+    background: $modal-b;
+    margin: auto;
+    padding: 0 em(20);
+    padding-bottom: em(100);
+    border-radius: em(5);
+    transition: .3s ease-out;
+    opacity: 0;
+    width: 65%;
+    transform: translateY(25%) scale(.3);
+    @include media-q(medium) {
+      width: 60%;
+    }
+    @include media-q(large){
+      width: 35%;
+    }
+  }
+  &-content {
+    padding: em(20);
+  }
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.no-scroll {
+  position: fixed;
+  left: 0;
+  right: 0;
+}

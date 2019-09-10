@@ -1,0 +1,96 @@
+// ======================================
+//  Buttons
+// ======================================
+
+.close-button {
+  display: inline-block;;
+  margin: 0;
+  margin-left: em(50);
+  margin-top: em(5);
+  font-size: em(55);
+  color: $button-color;
+  transition: color 0.4s;
+  cursor: pointer;
+  @include media-q(medium) {
+    margin-left: em(80);
+  }
+  &:hover {
+    color: #b5a298;
+  }
+}
+
+.prev-arrow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: inline-block;
+  width: em(40);
+  margin-left: em(18);
+  margin-bottom: em(24);
+  height: em(40);
+  border: em(5) solid $button-color;
+  border-radius: 50%;
+  transition: all 0.4s;
+  cursor: pointer;
+  &:after {
+    content: '';
+  	display: inline-block;
+    margin-top: em(12);
+    margin-left: em(8);
+    width: em(11);
+    height: em(11);
+    border-top: em(5) solid $button-color;
+    border-right: em(5) solid $button-color;
+    -moz-transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    transition: border-color 0.4s;
+  }
+  @include media-q(medium) {
+    transform: translateX(em(18));
+  }
+  &:hover {
+    border-color: #b5a298;
+    &:after {
+      border-color: #b5a298;
+    }
+  }
+}
+
+.next-arrow {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: inline-block;
+  width: em(40);
+  margin-right: em(18);
+  margin-bottom: em(24);
+  height: em(40);
+  border: em(5) solid $button-color;
+  border-radius: 50%;
+  transition: all 0.4s;
+  cursor: pointer;
+  &:after {
+    content: '';
+  	display: inline-block;
+    margin-top: em(12);
+    margin-left: em(-6);
+    width: em(11);
+    height: em(11);
+    border-top: em(5) solid $button-color;
+    border-right: em(5) solid $button-color;
+    -moz-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    transform: rotate(45deg);
+    transition: border-color 0.4s;
+  }
+  @include media-q(medium) {
+    transform: translateX(em(-18));
+  }
+  &:hover {
+    border-color: #b5a298;
+    &:after {
+      border-color: #b5a298;
+    }
+  }
+}

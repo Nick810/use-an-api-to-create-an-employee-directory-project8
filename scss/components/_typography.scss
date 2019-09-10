@@ -1,0 +1,24 @@
+// ======================================
+//  Typography
+// ======================================
+
+// Web Fonts
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
+//
+
+.profile-name {
+  color: $secondary-heading-color;
+  font-size: em(14);
+  font-weight: 600;
+  @include media-q(large) {
+    margin-top: 0;
+  }
+}
+
+.modal-heading {
+  color: $secondary-heading-color;
+}
+
+.hr {
+  border-bottom: em(1) solid;
+}
