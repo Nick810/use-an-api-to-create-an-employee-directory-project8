@@ -74,12 +74,12 @@ function overlayAnimation() {
     overlay.style.background = 'rgba(51,51,51,0.9)';
     setTimeout(() => {
       modalCard.style.opacity = '1';
-      modalCard.style.transform = 'translateY(25%) scale(1)';
+      modalCard.style.transform = 'translateY(0%) scale(0.7)';
     }, 400)
   } else {
     modalSwitch = false;
     overlay.style.background = 'rgba(0,0,0,0)';
-    modalCard.style.transform = 'translateY(25%) scale(.5)';
+    modalCard.style.transform = 'translateY(0%) scale(.5)';
     modalCard.style.opacity = '0';
     overlay.classList.add('hidden');
     gridContainer.classList.remove('no-scroll');
