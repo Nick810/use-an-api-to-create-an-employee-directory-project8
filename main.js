@@ -187,7 +187,7 @@ overlay.addEventListener('click', (e) => {
     avartarIndex -= 1;
     switchModal(avartarIndex);
   } else if (e.target === next) {
-    avartarIndex =+ 1;
+    avartarIndex = avartarIndex + 1;
     switchModal(avartarIndex);
   }
 });
